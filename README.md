@@ -18,8 +18,13 @@ El código utiliza programación orientada a objetos con clases que representan 
 
 ## Estructura del proyecto
 
-- `Formativa2.java`: clase principal con el menú y la lógica de interacción con el usuario.
-- Clases `VeleroLigero` y `VeleroOceanico`: heredan de una clase base (presumiblemente `Datos`) y contienen la lógica específica para cada tipo de velero.
+El paquete `formativa2` contiene las siguientes clases e interfaces:
+
+- **Formativa2.java**: clase principal con el menú interactivo para gestionar veleros.
+- **Datos.java**: clase base que almacena información común de un velero (código, nombre, precio base).
+- **Impuesto.java**: interfaz que define constantes y método para cálculo de descuentos por antigüedad y ajuste de precio.
+- **VeleroLigero.java**: clase que extiende `Datos` e implementa `Impuesto`. Representa veleros ligeros con su lógica de cálculo de precio final.
+- **VeleroOceanico.java**: clase que extiende `Datos` e implementa `Impuesto`. Representa veleros oceánicos con su propia lógica para ajuste y precio final.
 
 ---
 
@@ -32,16 +37,16 @@ El código utiliza programación orientada a objetos con clases que representan 
 
 2. Compilar el proyecto (desde la carpeta raíz):
     ```bash
-    javac package_formativa2/*.java
+    javac formativa2/*.java
     ```
 
 3. Ejecutar la aplicación:
     ```bash
-    java package_formativa2.Formativa2
+    java formativa2.Formativa2
     ```
 
 4. Seguir el menú para:
-   - Ingresar veleros con sus datos (tipo, código, nombre, precio base, marca, modelo, año, cantidad de velas, eslora).
+   - Ingresar veleros con sus datos (tipo, código, nombre, precio base, marca, modelo, año fabricación, cantidad de velas, eslora).
    - Consultar el precio final de un velero ingresado por su código.
    - (Próximamente) Ajustar precios y contar veleros.
 
@@ -59,6 +64,8 @@ El código utiliza programación orientada a objetos con clases que representan 
 - El menú actualmente tiene opciones en desarrollo (3 y 4).
 - El código prevé evitar veleros duplicados por código.
 - El método de cálculo del precio final está basado en polimorfismo en las subclases de velero.
+- `VeleroOceanico` añade un recargo si la eslora es mayor a 20 pies.
+- El descuento por antigüedad aplica si el velero tiene más de 20 años.
 
 ---
 
@@ -69,4 +76,3 @@ Duoc
 ---
 
 ¿Preguntas o sugerencias? Abre un issue o contacta al autor.
-
