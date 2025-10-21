@@ -1,0 +1,21 @@
+# Ignorar archivos de compilación Java
+*.class
+
+# Ignorar carpetas de construcción (si usas alguna)
+bin/
+build/
+
+# Ignorar archivos de configuración de IDEs comunes
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Ignorar archivos temporales
+*.log
+*.tmp
+
+# Ignorar archivos específicos del sistema operativo
+.DS_Store
+Thumbs.db
