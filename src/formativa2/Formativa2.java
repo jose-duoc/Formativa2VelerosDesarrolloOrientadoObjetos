@@ -51,6 +51,7 @@ public class Formativa2 {
                    }else{
                        System.out.println("Velero no válido");
                    }
+                   break;
                case 2:
                    System.out.print("Ingrese Código del velero");
                    String cod = sc.nextLine();
@@ -88,7 +89,28 @@ public class Formativa2 {
                    if (!encontrado) System.out.println("Velero no encontrado");
                    break;
                case 3:
+                   for(Datos v : veleros){
+                       if(v instanceof VeleroOceanico){
+                           ((VeleroOceanico) v).ajustePrecio();
+                           System.out.println("Ajuste de precio para Velero Oceánico aplicado");
+                       }else if(v instanceof VeleroLigero){
+                           ((VeleroLigero) v).ajustePrecio();
+                           System.out.println("Ajuste de precio para Velero Ligero aplicado");
+                       }
+                   }
+                   break;
                case 4:
+                   int count = 0;
+                   for(Datos V : veleros){
+                       if(V instanceof VeleroOceanico){
+                           VeleroOceanico vo = (VeleroOceanico) V;
+                           if("Jeanneau".equalsIgnoreCase(vo.getMarca())){
+                               count++;
+                           }
+                       }
+                   }
+                   System.out.println("Cantidad de veleros: "+ count);
+                   break;
                case 5:
                    System.out.println("Saliendo....");
                    break;
